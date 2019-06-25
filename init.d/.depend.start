@@ -1,0 +1,17 @@
+TARGETS = rsyslog open-vm-tools uuidd lxd unattended-upgrades lvm2-lvmpolld lvm2-lvmetad lxcfs killprocs apport atd postgresql mdadm irqbalance single dbus acpid rsync ssh sysstat cron plymouth grub-common ondemand rc.local
+INTERACTIVE =
+atd: rsyslog
+postgresql: rsyslog
+mdadm: rsyslog
+irqbalance: rsyslog
+single: killprocs
+dbus: rsyslog
+acpid: rsyslog
+rsync: rsyslog
+ssh: rsyslog
+sysstat: rsyslog
+cron: rsyslog
+plymouth: atd rsyslog postgresql open-vm-tools mdadm uuidd lxd unattended-upgrades lvm2-lvmpolld irqbalance lvm2-lvmetad lxcfs dbus acpid rsync ssh apport sysstat cron
+grub-common: atd rsyslog postgresql open-vm-tools mdadm uuidd lxd unattended-upgrades lvm2-lvmpolld irqbalance lvm2-lvmetad lxcfs dbus acpid rsync ssh apport sysstat cron
+ondemand: atd rsyslog postgresql open-vm-tools mdadm uuidd lxd unattended-upgrades lvm2-lvmpolld irqbalance lvm2-lvmetad lxcfs dbus acpid rsync ssh apport sysstat cron
+rc.local: atd rsyslog postgresql open-vm-tools mdadm uuidd lxd unattended-upgrades lvm2-lvmpolld irqbalance lvm2-lvmetad lxcfs dbus acpid rsync ssh apport sysstat cron
